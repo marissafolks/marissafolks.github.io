@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Send & Receive — Marissa Folks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="nav-mark">Marissa Folks</a>
+    <ul class="nav-links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#experience">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html#work" class="cs-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to selected work
+      </a>
+      <div class="cs-kicker">UX Design · 0–1 · Regulated Fintech</div>
+      <h1>Designing Send &amp; Receive for self-directed crypto.</h1>
+      <p class="dek">Building the first crypto money-movement flows inside a regulated bank, where every screen had to answer to a custodian's API before it could answer to the user.</p>
+    </div>
+  </section>
+
+  <section style="border-top:none; padding-top:0;">
+    <div class="wrap">
+      <dl class="cs-meta-bar">
+        <div>
+          <dt>Role</dt>
+          <dd>Lead UX Designer</dd>
+        </div>
+        <div>
+          <dt>Company</dt>
+          <dd>Axos Bank, Self-Directed Crypto</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>In development, targeting launch in the coming months</dd>
+        </div>
+        <div>
+          <dt>Scope</dt>
+          <dd>End-to-end Send and Receive flows for Bitcoin: external wallets, internal Axos transfers, and linked-account transfers</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Overview</div>
+      <h2>The first time a regulated bank let customers move crypto on their own.</h2>
+      <p>Axos Bank's self-directed crypto product launched trading and custody, but customers had no way to move Bitcoin in or out of their accounts. I designed the Send and Receive flows from scratch, the first time Axos let customers transact directly with external wallets. Development is underway now, targeting launch in the coming months.</p>
+      <p>The real challenge wasn't the UI. Our custodial vendor holds assets in omnibus custody, so unlike Coinbase or Kraken, it can't credit a deposit the instant it confirms on-chain. Every transaction needs extra instruction, compliance checks, or manual review.</p>
+      <p>My job was to absorb that complexity so customers didn't feel all of it at once, while keeping compliance, risk, and engineering confident in the result.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">The Challenge</div>
+      <h2>Designing inside someone else's rulebook.</h2>
+
+      <ul class="cs-list">
+        <li><strong>No internal precedent.</strong> Every pattern, from saved wallets to limit displays, had to be designed from scratch.</li>
+        <li><strong>The vendor's API enforces its own compliance logic</strong> (Travel Rule data, sanctions screening, wallet whitelisting) that the UI has to surface, not hide.</li>
+        <li><strong>Customers compare us to Coinbase and Kraken</strong>, which carry none of these constraints. The flows needed to feel modern, not bureaucratic.</li>
+        <li><strong>Three transfer contexts</strong> (external wallets, other Axos customers, linked accounts) carry different risk and needed different friction levels.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Send Flow</div>
+      <h2>Treating compliance as a design constraint, not a disclaimer.</h2>
+      <p>Sending BTC out of a custodial account touches anti-money-laundering rules, sanctions screening, and transaction-purpose reporting. I treated each of those as a design constraint, not a disclaimer to bury in fine print.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Recipient entry and address validation.</h2>
+      <p>The recipient screen doubles as a saved-wallet manager, since repeat sends to the same address are the common case. Address validation runs as a real round trip to the vendor, not a client-side check, because the backend screens each address against sanctions and VASP data. I built a loading state for that check and separate error states for invalid format versus a flagged address, so customers get an honest signal instead of a generic failure.</p>
+      <p>Saved wallets carry a Pending badge because the vendor requires signed email authorization before an address becomes sendable, closer to institutional whitelisting than anything a retail exchange does. I surfaced that wait as a visible status customers can return to, rather than hiding it behind a spinner.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Purpose for sending.</h2>
+      <p>No mainstream exchange asks customers to declare why they're sending Bitcoin. Axos's vendor needs a purpose code for regulatory reporting before it accepts the instruction. I designed this as its own step, with categories worded the way a customer would actually describe an action (Gift, Reimbursement, Rebalance) instead of compliance taxonomy, so it reads as routine rather than an interrogation.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Amount, limits, and account selection.</h2>
+      <p>Limits are enforced per source account, not per customer, so the active account's remaining balance had to be unmistakable. I designed the Send Limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would exceed the limit, teaching the constraint early instead of surprising the customer at submission.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Verification and confirmation.</h2>
+      <p>SMS verification only appears on one path: internal transfers to another Axos customer above a set amount. That's a deliberate risk call with fraud and compliance, since third-party transfers are the pattern most associated with social-engineering scams.</p>
+      <p>The confirmation copy avoids promising what the backend can't deliver. The vendor queues outbound transactions before broadcasting them, so there's no transaction hash the moment a customer hits submit, unlike Coinbase or Kraken. I wrote the success state around what's actually true: the request is initiated, and the customer will be notified by email once it's complete. That's a smaller promise, but it's one the product can keep.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Receive Flow</div>
+      <h2>Same constraint, opposite direction.</h2>
+      <p>Receiving has the same underlying constraint as sending, the vendor's omnibus custody model, but it shows up in reverse: instead of validating who you're sending to, the system needs the customer to actively claim funds that already arrived.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Sharing the deposit address.</h2>
+      <p>Most platforms cache a permanent deposit address, so the QR code is always there. Our vendor generates it on demand through an API call, which means a real failure mode if that endpoint is slow. I designed an explicit QR Code Not Available state with a path to retry, rather than letting the screen fail silently.</p>
+      <p>The network-exclusivity notice under the address (Bitcoin network only) does real work too. The vendor doesn't auto-detect a deposit sent on the wrong network, so that warning has to do the job a routing layer would otherwise handle. This is the one mistake on this screen that can't be undone, so it sits directly under the address rather than in a tooltip.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Manual approval for external deposits.</h2>
+      <p>Coinbase and Kraken credit inbound Bitcoin automatically once it confirms on-chain. Because Axos's vendor holds funds in omnibus custody rather than a dedicated wallet per customer, it needs explicit customer direction before crediting an account, which meant designing an active approval step into a moment that's normally passive in crypto.</p>
+
+      <p>The deposit-received state opens with a celebratory visual before asking the customer to act, so the first thing they feel is that money arrived. The Verify Deposit Information step, which collects sender country and custody type, is a Travel Rule requirement (FATF/FinCEN) that most platforms collect passively. I scoped the fields down to exactly what's required and pre-filled the obvious case, a checkbox for "this is from my own wallet," so it reads as a quick confirmation rather than a form.</p>
+      <p>Even after approval, funds don't land instantly, since the vendor's crediting workflow includes a backend review queue. I wrote that state honestly ("we're reviewing your submission") instead of implying the deposit is final. The internal Axos-to-Axos deposit sits right next to this flow on purpose: it carries none of the Travel Rule obligation, so it resolves in one auto-approved screen, the experience customers expect everywhere else.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <h2>Cost basis as a deliberate, separate ask.</h2>
+      <p>The cost-basis prompt after both deposit flows isn't vendor-mandated. It's a platform decision: most competitors ignore cost basis entirely or defer it to tax season, which becomes a support burden later. I surface it immediately, but as a deferred, non-blocking note rather than a required field, so it doesn't compete with the more time-sensitive compliance steps above it.</p>
+    </div>
+  </section>
+
+  <section class="cs-summary">
+    <div class="wrap">
+      <div class="cs-eyebrow">Where This Stands</div>
+      <p>Engineering is currently building against these flows, with launch targeted in the next few months. Because this was net-new for the bank, a meaningful part of the work was procedural: getting compliance, risk, and the vendor's integration team aligned on which constraints were truly non-negotiable (sanctions screening, Travel Rule data, wallet whitelisting) versus which were defaults I could soften in the UI.</p>
+      <p>The throughline is the same across both flows: where the backend genuinely can't move at exchange speed, the design says so plainly and gives the customer a clear next step. Where the constraint was a default rather than a requirement, I designed around it instead of passing it through.</p>
+      <div class="cs-tags">
+        <span class="cs-tag">0–1 Design</span>
+        <span class="cs-tag">Regulated Fintech</span>
+        <span class="cs-tag">Crypto</span>
+        <span class="cs-tag">Compliance UX</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-next">
+    <div class="wrap">
+      <a href="research-to-buy.html">
+        Next case study: Research-to-Buy
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Marissa Folks — San Diego, CA
+</footer>
+
+</body>
+</html>
