@@ -637,6 +637,14 @@ footer{
   margin-left:auto;
   margin-right:auto;
 }
+.cs-phone-row--equal{
+  align-items:stretch;
+}
+.cs-phone-row--equal img{
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+}
 .cs-phone-row img{
   width:100%;
   display:block;
