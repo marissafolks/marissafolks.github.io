@@ -406,7 +406,15 @@ footer{
   width:220px;
   flex-shrink:0;
 }
-.cs-hero-split-image img{
+.cs-hero-split-image--two{
+  width:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  width:320px;
+}
+.cs-hero-split-image img,
+.cs-hero-split-image--two img{
   width:100%;
   display:block;
   border:none;
@@ -415,6 +423,7 @@ footer{
 @media (max-width:760px){
   .cs-hero-split{grid-template-columns:1fr;}
   .cs-hero-split-image{width:160px;margin:0 auto;}
+  .cs-hero-split-image--two{width:280px;margin:0 auto;}
 }
 
 .cs-back{
