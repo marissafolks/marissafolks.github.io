@@ -670,7 +670,8 @@ footer{
   .cs-section-split{grid-template-columns:1fr;}
   .cs-section-split-media{width:180px;margin:0 auto;}
 }
-.cs-phone-row img{
+.cs-phone-row img,
+.cs-phone-row video{
   width:100%;
   display:block;
   border-radius:6px;
