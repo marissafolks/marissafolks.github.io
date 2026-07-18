@@ -660,7 +660,7 @@ footer{
   flex-shrink:0;
 }
 .cs-section-split-media--two{
-  width:360px;
+  width:460px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
@@ -669,9 +669,6 @@ footer{
 .cs-section-split-media--two img,
 .cs-section-split-media--two video{
   width:100%;
-  aspect-ratio:9/16;
-  object-fit:cover;
-  object-position:top;
   display:block;
 }
 .cs-section-split-media img,
