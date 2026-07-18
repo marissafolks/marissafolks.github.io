@@ -659,6 +659,13 @@ footer{
   width:220px;
   flex-shrink:0;
 }
+.cs-section-split-media--two{
+  width:360px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:start;
+}
 .cs-section-split-media img,
 .cs-section-split-media video{
   width:100%;

@@ -174,41 +174,50 @@
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Sharing the deposit address.</h2>
-      <p>Most platforms cache a permanent deposit address, so the QR code is always there. Our vendor generates it on demand through an API call, which means a real failure mode if that endpoint is slow. I designed an explicit QR Code Not Available state with a path to retry, rather than letting the screen fail silently.</p>
-      <p>The network-exclusivity notice under the address (Bitcoin network only) does real work too. The vendor doesn't auto-detect a deposit sent on the wrong network, so that warning has to do the job a routing layer would otherwise handle. This is the one mistake on this screen that can't be undone, so it sits directly under the address rather than in a tooltip.</p>
-
-      <div class="cs-phone-row cs-phone-row--two">
-        <img src="receive-qr.jpg" alt="Receive BTC screen showing QR code and wallet address">
-        <img src="receive-qr-error.png" alt="QR Code Not Available error state with retry option">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Sharing the deposit address.</h2>
+          <p>Most platforms cache a permanent deposit address, so the QR code is always there. Our vendor generates it on demand through an API call, which means a real failure mode if that endpoint is slow. I designed an explicit QR Code Not Available state with a path to retry, rather than letting the screen fail silently.</p>
+          <p>The network-exclusivity notice under the address (Bitcoin network only) does real work too. The vendor doesn't auto-detect a deposit sent on the wrong network, so that warning has to do the job a routing layer would otherwise handle. This is the one mistake on this screen that can't be undone, so it sits directly under the address rather than in a tooltip.</p>
+        </div>
+        <div class="cs-section-split-media cs-section-split-media--two">
+          <img src="receive-qr.jpg" alt="Receive BTC screen showing QR code and wallet address">
+          <img src="receive-qr-error.png" alt="QR Code Not Available error state with retry option">
+        </div>
       </div>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Manual approval for external deposits.</h2>
-      <p>Coinbase and Kraken credit inbound Bitcoin automatically once it confirms on-chain. Because Axos's vendor holds funds in omnibus custody rather than a dedicated wallet per customer, it needs explicit customer direction before crediting an account, which meant designing an active approval step into a moment that's normally passive in crypto.</p>
-      <p>The deposit-received state opens with a celebratory visual before asking the customer to act, so the first thing they feel is that money arrived. The Verify Deposit Information step, which collects sender country and custody type, is a Travel Rule requirement (FATF/FinCEN) that most platforms collect passively. I scoped the fields down to exactly what's required and pre-filled the obvious case, a checkbox for "this is from my own wallet," so it reads as a quick confirmation rather than a form.</p>
-      <p>Even after approval, funds don't land instantly, since the vendor's crediting workflow includes a backend review queue. I wrote that state honestly ("we're reviewing your submission") instead of implying the deposit is final. The internal Axos-to-Axos deposit sits right next to this flow on purpose: it carries none of the Travel Rule obligation, so it resolves in one auto-approved screen, the experience customers expect everywhere else.</p>
-
-      <div class="cs-video-block">
-        <video autoplay loop muted playsinline>
-          <source src="receive-external-deposit.mp4" type="video/mp4">
-        </video>
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Manual approval for external deposits.</h2>
+          <p>Coinbase and Kraken credit inbound Bitcoin automatically once it confirms on-chain. Because Axos's vendor holds funds in omnibus custody rather than a dedicated wallet per customer, it needs explicit customer direction before crediting an account, which meant designing an active approval step into a moment that's normally passive in crypto.</p>
+          <p>The deposit-received state opens with a celebratory visual before asking the customer to act, so the first thing they feel is that money arrived. The Verify Deposit Information step, which collects sender country and custody type, is a Travel Rule requirement (FATF/FinCEN) that most platforms collect passively. I scoped the fields down to exactly what's required and pre-filled the obvious case, a checkbox for "this is from my own wallet," so it reads as a quick confirmation rather than a form.</p>
+          <p>Even after approval, funds don't land instantly, since the vendor's crediting workflow includes a backend review queue. I wrote that state honestly ("we're reviewing your submission") instead of implying the deposit is final. The internal Axos-to-Axos deposit sits right next to this flow on purpose: it carries none of the Travel Rule obligation, so it resolves in one auto-approved screen, the experience customers expect everywhere else.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="receive-external-deposit.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Cost basis as a deliberate, separate ask.</h2>
-      <p>The cost-basis prompt after both deposit flows isn't vendor-mandated. It's a platform decision: most competitors ignore cost basis entirely or defer it to tax season, which becomes a support burden later. I surface it immediately, but as a deferred, non-blocking note rather than a required field, so it doesn't compete with the more time-sensitive compliance steps above it.</p>
-
-      <div class="cs-video-block">
-        <video autoplay loop muted playsinline>
-          <source src="add-tax-lot.mp4" type="video/mp4">
-        </video>
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Cost basis as a deliberate, separate ask.</h2>
+          <p>The cost-basis prompt after both deposit flows isn't vendor-mandated. It's a platform decision: most competitors ignore cost basis entirely or defer it to tax season, which becomes a support burden later. I surface it immediately, but as a deferred, non-blocking note rather than a required field, so it doesn't compete with the more time-sensitive compliance steps above it.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="add-tax-lot.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>
