@@ -107,25 +107,31 @@
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Recipient entry and address validation.</h2>
-      <p>The recipient screen doubles as a saved-wallet manager, since repeat sends to the same address are the common case. Address validation runs as a real round trip to the vendor, not a client-side check, because the backend screens each address against sanctions and VASP data. I built a loading state for that check and separate error states for invalid format versus a flagged address, so customers get an honest signal instead of a generic failure.</p>
-      <p>Saved wallets carry a Pending badge because the vendor requires signed email authorization before an address becomes sendable, closer to institutional whitelisting than anything a retail exchange does. I surfaced that wait as a visible status customers can return to, rather than hiding it behind a spinner.</p>
-
-      <div class="cs-video-block">
-        <video autoplay loop muted playsinline>
-          <source src="add-saved-wallet.mp4" type="video/mp4">
-        </video>
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Recipient entry and address validation.</h2>
+          <p>The recipient screen doubles as a saved-wallet manager, since repeat sends to the same address are the common case. Address validation runs as a real round trip to the vendor, not a client-side check, because the backend screens each address against sanctions and VASP data. I built a loading state for that check and separate error states for invalid format versus a flagged address, so customers get an honest signal instead of a generic failure.</p>
+          <p>Saved wallets carry a Pending badge because the vendor requires signed email authorization before an address becomes sendable, closer to institutional whitelisting than anything a retail exchange does. I surfaced that wait as a visible status customers can return to, rather than hiding it behind a spinner.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="add-saved-wallet.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Purpose for sending.</h2>
-      <p>No mainstream exchange asks customers to declare why they're sending Bitcoin. Axos's vendor needs a purpose code for regulatory reporting before it accepts the instruction. I designed this as its own step, with categories worded the way a customer would actually describe an action (Gift, Reimbursement, Rebalance) instead of compliance taxonomy, so it reads as routine rather than an interrogation.</p>
-
-      <div class="cs-video-block">
-        <img src="send-purpose.png" alt="Purpose for Sending screen showing transfer categories">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Purpose for sending.</h2>
+          <p>No mainstream exchange asks customers to declare why they're sending Bitcoin. Axos's vendor needs a purpose code for regulatory reporting before it accepts the instruction. I designed this as its own step, with categories worded the way a customer would actually describe an action (Gift, Reimbursement, Rebalance) instead of compliance taxonomy, so it reads as routine rather than an interrogation.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <img src="send-purpose.png" alt="Purpose for Sending screen showing transfer categories">
+        </div>
       </div>
     </div>
   </section>

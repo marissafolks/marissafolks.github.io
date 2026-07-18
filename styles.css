@@ -645,6 +645,31 @@ footer{
   object-fit:cover;
   object-position:top;
 }
+
+.cs-section-split{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:48px;
+  align-items:center;
+}
+.cs-section-split-text{
+  min-width:0;
+}
+.cs-section-split-media{
+  width:220px;
+  flex-shrink:0;
+}
+.cs-section-split-media img,
+.cs-section-split-media video{
+  width:100%;
+  display:block;
+  border:none;
+  outline:none;
+}
+@media (max-width:760px){
+  .cs-section-split{grid-template-columns:1fr;}
+  .cs-section-split-media{width:180px;margin:0 auto;}
+}
 .cs-phone-row img{
   width:100%;
   display:block;
