@@ -138,14 +138,17 @@
 
   <section class="cs-section">
     <div class="wrap">
-      <h2>Amount and limits.</h2>
-      <p>Limits are enforced per source account, not per customer, so the active account's remaining balance had to be unmistakable. I designed the Send Limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would exceed the limit, teaching the constraint early instead of surprising the customer at submission.</p>
-
-      <div class="cs-phone-row cs-phone-row--two">
-        <video autoplay loop muted playsinline>
-          <source src="send-limit.mp4" type="video/mp4">
-        </video>
-        <img src="limits-modal.png" alt="Send Limits modal showing daily and monthly limit progress bars">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <h2>Amount and limits.</h2>
+          <p>Limits are enforced per source account, not per customer, so the active account's remaining balance had to be unmistakable. I designed the Send Limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would exceed the limit, teaching the constraint early instead of surprising the customer at submission.</p>
+        </div>
+        <div class="cs-section-split-media cs-section-split-media--two">
+          <video autoplay loop muted playsinline>
+            <source src="send-limit.mp4" type="video/mp4">
+          </video>
+          <img src="limits-modal.png" alt="Send Limits modal showing daily and monthly limit progress bars">
+        </div>
       </div>
     </div>
   </section>

@@ -666,6 +666,14 @@ footer{
   gap:12px;
   align-items:start;
 }
+.cs-section-split-media--two img,
+.cs-section-split-media--two video{
+  width:100%;
+  aspect-ratio:9/16;
+  object-fit:cover;
+  object-position:top;
+  display:block;
+}
 .cs-section-split-media img,
 .cs-section-split-media video{
   width:100%;
