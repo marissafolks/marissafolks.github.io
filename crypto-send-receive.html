@@ -110,8 +110,8 @@
       <div class="cs-section-split">
         <div class="cs-section-split-text">
           <h2>Recipient entry and address validation.</h2>
-          <p>The recipient screen doubles as a saved-wallet manager, since repeat sends to the same address are the common case. Address validation runs as a real round trip to the vendor, not a client-side check, because the backend screens each address against sanctions and VASP data. I built a loading state for that check and separate error states for invalid format versus a flagged address, so customers get an honest signal instead of a generic failure.</p>
-          <p>Saved wallets carry a Pending badge because the vendor requires signed email authorization before an address becomes sendable, closer to institutional whitelisting than anything a retail exchange does. I surfaced that wait as a visible status customers can return to, rather than hiding it behind a spinner.</p>
+          <p>The recipient screen also acts as a saved wallet manager, since most people send to the same addresses repeatedly. When a customer enters a wallet address, it gets validated against a real sanctions and compliance check on the backend, not just a format check on the device.</p>
+          <p>Saved wallets show a Pending badge when they haven't been approved yet. The vendor requires email authorization before a wallet address can be used, which is more involved than anything a typical crypto exchange asks for. Rather than hiding that wait, I made it a visible status customers can come back to.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
