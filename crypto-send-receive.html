@@ -143,11 +143,10 @@
           <h2>Amount and limits.</h2>
           <p>Limits are enforced per source account, not per customer, so the active account's remaining balance had to be unmistakable. I designed the Send Limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would exceed the limit, teaching the constraint early instead of surprising the customer at submission.</p>
         </div>
-        <div class="cs-section-split-media cs-section-split-media--two">
+        <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
             <source src="send-limit.mp4" type="video/mp4">
           </video>
-          <img src="limits-modal.png" alt="Send Limits modal showing daily and monthly limit progress bars">
         </div>
       </div>
     </div>
@@ -183,9 +182,8 @@
           <p>Most platforms cache a permanent deposit address, so the QR code is always there. Our vendor generates it on demand through an API call, which means a real failure mode if that endpoint is slow. I designed an explicit QR Code Not Available state with a path to retry, rather than letting the screen fail silently.</p>
           <p>The network-exclusivity notice under the address (Bitcoin network only) does real work too. The vendor doesn't auto-detect a deposit sent on the wrong network, so that warning has to do the job a routing layer would otherwise handle. This is the one mistake on this screen that can't be undone, so it sits directly under the address rather than in a tooltip.</p>
         </div>
-        <div class="cs-section-split-media cs-section-split-media--two">
+        <div class="cs-section-split-media">
           <img src="receive-qr.jpg" alt="Receive BTC screen showing QR code and wallet address">
-          <img src="receive-qr-error.png" alt="QR Code Not Available error state with retry option">
         </div>
       </div>
     </div>
