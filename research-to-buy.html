@@ -96,13 +96,16 @@
     <div class="wrap">
       <div class="cs-eyebrow">Account Gating &amp; Upsell</div>
       <h2>Letting people look before they commit.</h2>
-      <p>Search works the same for everyone no matter which account they have. The account requirement only comes up when someone actually tries to place a trade. A customer with a trading account but no crypto account can research Bitcoin and even build out an order, but they'll see a prompt to open a crypto account once they go to confirm it. It works the same way in reverse for crypto-only customers. I wanted that moment to feel like a natural next step rather than a wall, so letting people try the order flow first, before asking them to open anything, was the whole point.</p>
-
-      <div class="cs-video-block">
-        <video autoplay loop muted playsinline>
-          <source src="try-before-buy.mp4" type="video/mp4">
-          <source src="try-before-buy.mov" type="video/quicktime">
-        </video>
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <p>Search works the same for everyone no matter which account they have. The account requirement only comes up when someone actually tries to place a trade. A customer with a trading account but no crypto account can research Bitcoin and even build out an order, but they'll see a prompt to open a crypto account once they go to confirm it. It works the same way in reverse for crypto-only customers. I wanted that moment to feel like a natural next step rather than a wall, so letting people try the order flow first, before asking them to open anything, was the whole point.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="try-before-buy.mp4" type="video/mp4">
+            <source src="try-before-buy.mov" type="video/quicktime">
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -125,14 +128,17 @@
     <div class="wrap">
       <div class="cs-eyebrow">Buy &amp; Sell Flow</div>
       <h2>One flow, multiple levels of complexity.</h2>
-      <p>Buying and selling share the same order-entry logic, just flipped. Bitcoin and mutual funds only support market orders, so that flow is just: type a dollar amount, review it, confirm it. Stocks and ETFs support all four order types, so I broke that flow into steps instead of one long form. Picking a stop-limit order, for example, walks you through setting the stop price, then the limit price, then how long the order should stay open, with the live price visible the whole time.</p>
-      <p>That step-by-step approach was a deliberate call for mobile specifically. A stop-limit order asks for several pieces of information at once, stop price, limit price, expiration, and showing all of that on a small screen in one form felt overwhelming and easy to get wrong. Breaking it into individual steps kept each decision focused and gave people room to actually think about what they were entering, instead of scanning a dense form and second-guessing themselves. On desktop, that same order fits into a single modal instead of separate steps, since there's enough screen space to take in several fields at once without it feeling overwhelming.</p>
-
-      <div class="cs-video-block">
-        <video autoplay loop muted playsinline>
-          <source src="stop-limit-buy.mp4" type="video/mp4">
-          <source src="stop-limit-buy.mov" type="video/quicktime">
-        </video>
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <p>Buying and selling share the same order-entry logic, just flipped. Bitcoin and mutual funds only support market orders, so that flow is just: type a dollar amount, review it, confirm it. Stocks and ETFs support all four order types, so I broke that flow into steps instead of one long form. Picking a stop-limit order, for example, walks you through setting the stop price, then the limit price, then how long the order should stay open, with the live price visible the whole time.</p>
+          <p>That step-by-step approach was a deliberate call for mobile specifically. A stop-limit order asks for several pieces of information at once, stop price, limit price, expiration, and showing all of that on a small screen in one form felt overwhelming and easy to get wrong. Breaking it into individual steps kept each decision focused and gave people room to actually think about what they were entering, instead of scanning a dense form and second-guessing themselves. On desktop, that same order fits into a single modal instead of separate steps, since there's enough screen space to take in several fields at once without it feeling overwhelming.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="stop-limit-buy.mp4" type="video/mp4">
+            <source src="stop-limit-buy.mov" type="video/quicktime">
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -141,10 +147,13 @@
     <div class="wrap">
       <div class="cs-eyebrow">Crypto-Specific Friction</div>
       <h2>The costs that only apply to Bitcoin.</h2>
-      <p>Because Axos holds Bitcoin through a third-party custody account instead of directly, crypto trades come with a transaction fee and a daily limit that stocks and funds don't have. I didn't want either of those to be a surprise, so the fee shows up clearly in the order review, and the daily limit shows up earlier, while someone's still typing in their amount, so they can see what they have left before they hit a wall.</p>
-
-      <div class="cs-video-block">
-        <img src="btc-review-fees.png" alt="BTC Review Order screen showing transaction fee and estimated total">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <p>Because Axos holds Bitcoin through a third-party custody account instead of directly, crypto trades come with a transaction fee and a daily limit that stocks and funds don't have. I didn't want either of those to be a surprise, so the fee shows up clearly in the order review, and the daily limit shows up earlier, while someone's still typing in their amount, so they can see what they have left before they hit a wall.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <img src="btc-review-fees.png" alt="BTC Review Order screen showing transaction fee and estimated total">
+        </div>
       </div>
     </div>
   </section>
@@ -153,11 +162,14 @@
     <div class="wrap">
       <div class="cs-eyebrow">Review Order</div>
       <h2>Price means something different for each asset.</h2>
-      <p>Crypto prices update continuously, so the review screen just shows the market price and an estimate. Stocks are different. Prices come from a real bid and ask that can go stale within seconds, so I added a timestamp and a manual refresh button, so people know exactly how current their quote is before they confirm. Both screens have a disclosure right above the confirm button, but the wording is different for each: crypto talks about volatility, stocks talk about the risk of losing your principal.</p>
-
-      <div class="cs-phone-row cs-phone-row--two">
-        <img src="btc-review-copy.png" alt="BTC review order screen showing transaction fee and crypto disclosure">
-        <img src="equity-review.png" alt="TSLA review order screen showing NBBO quote, refresh link, and equity disclosure">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <p>Crypto prices update continuously, so the review screen just shows the market price and an estimate. Stocks are different. Prices come from a real bid and ask that can go stale within seconds, so I added a timestamp and a manual refresh button, so people know exactly how current their quote is before they confirm. Both screens have a disclosure right above the confirm button, but the wording is different for each: crypto talks about volatility, stocks talk about the risk of losing your principal.</p>
+        </div>
+        <div class="cs-section-split-media cs-section-split-media--two">
+          <img src="btc-review-copy.png" alt="BTC review order screen showing transaction fee and crypto disclosure">
+          <img src="equity-review.png" alt="TSLA review order screen showing NBBO quote, refresh link, and equity disclosure">
+        </div>
       </div>
     </div>
   </section>
