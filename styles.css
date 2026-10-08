@@ -208,7 +208,8 @@ section{padding:88px 0;border-top:1px solid var(--line);}
   object-position:center;
   display:block;
 }
-.work-card-inset img[src*="tsla-ratings"]{
+.work-card-inset img[src*="tsla-ratings"],
+.work-card-inset img[src*="btc-thumb"]{
   object-fit:cover;
 }
 .work-card-title-row{
@@ -479,6 +480,18 @@ footer{
   margin-bottom:8px;
 }
 .cs-meta-bar dd{font-size:14.5px;color:var(--ink);line-height:1.4;}
+.cs-section p a,
+.cs-summary p a{
+  color:var(--accent);
+  font-weight:500;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  transition:color .15s ease;
+}
+.cs-section p a:hover,
+.cs-summary p a:hover{color:var(--accent-deep);}
+.cs-meta-bar--three{grid-template-columns:repeat(3, 1fr);row-gap:28px;}
 @media (max-width:760px){
   .cs-meta-bar{grid-template-columns:repeat(2, 1fr);row-gap:24px;}
 }
@@ -678,6 +691,7 @@ footer{
   border:none;
   outline:none;
 }
+.cs-section-split-media .cs-video-raw{border:1px solid var(--line);border-radius:22px;}
 @media (max-width:760px){
   .cs-section-split{grid-template-columns:1fr;}
   .cs-section-split-media{width:180px;margin:0 auto;}

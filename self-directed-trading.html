@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-Directed Trading | Marissa Folks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="nav-mark">Marissa Folks</a>
+    <ul class="nav-links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#experience">Background</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <section class="cs-hero">
+    <div class="wrap">
+      <a href="index.html#work" class="cs-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to selected work
+      </a>
+      <div class="cs-hero-split">
+        <div class="cs-hero-split-text">
+          <div class="cs-kicker">UX Design · Mobile &amp; Web · Regulated Fintech</div>
+          <h1>Making self-directed trading better on mobile, and bringing it to web for the first time.</h1>
+          <p class="dek">Enhancing Axos's existing stock, ETF, and mutual fund trading experience while launching it on web, as one of the first features built fully in the new 3.0 UI.</p>
+        </div>
+        <div class="cs-hero-split-image">
+          <img src="tsla-digest.png" alt="Tesla stock research page on mobile showing price chart, position, and Buy &amp; Sell button">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:none; padding-top:0;">
+    <div class="wrap">
+      <dl class="cs-meta-bar cs-meta-bar--three">
+        <div>
+          <dt>Role</dt>
+          <dd>Lead UX Designer</dd>
+        </div>
+        <div>
+          <dt>Company</dt>
+          <dd>Axos Bank, Self-Directed Trading</dd>
+        </div>
+        <div>
+          <dt>Status</dt>
+          <dd>In development, targeting launch in the coming months</dd>
+        </div>
+        <div>
+          <dt>Scope</dt>
+          <dd>Stock, ETF, and mutual fund research and trading across mobile and web, rebuilt in Axos's 3.0 UI</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Product Manager<br>Technical Lead<br>Project Manager<br>Business Analysts<br>Developers</dd>
+        </div>
+        <div>
+          <dt>Stakeholders</dt>
+          <dd>SVP of Axos Invest<br>President of Consumer Bank<br>SVP of Retail Banking &amp; Invest</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <div class="cs-eyebrow">Overview</div>
+          <h2>An existing product, a new platform, and a new UI at the same time.</h2>
+          <p>The Axos mobile app already offered self-directed trading, but it only supported market and limit orders. The ability to research an asset was practically non-existent. The digest page only displayed a simple data visual and a few key statistics, which left customers with very little to go on before putting their money into something.</p>
+          <p>My job was to turn that into a trading experience people could actually make decisions in. That meant adding stop and stop-limit orders alongside market and limit, building the digest page out into a real research page with analyst ratings, earnings, and dividend history, and bringing all of it to web, where Axos customers had never been able to trade before.</p>
+          <p>It was also one of the first features built fully in Axos's new 3.0 UI, which brings the legacy web experience and the 2.0 mobile app together into one system across both platforms. That made trading a test case for the whole initiative, so the patterns set here had to hold up for the rest of the investment experience that follows.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video class="cs-video-raw" autoplay loop muted playsinline>
+            <source src="mobile-2-trade.mp4" type="video/mp4">
+          </video>
+          <div class="cs-image-caption">Trading in Axos mobile 2.0, before this project</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">The Challenge</div>
+      <h2>Where things got complicated.</h2>
+
+      <ul class="cs-list">
+        <li><strong>This had never existed on web before.</strong> Trading was mobile-only, so this project had to prove out patterns for a platform that had nothing to build from.</li>
+        <li><strong>Order types depend on the asset, not on design.</strong> Stocks and ETFs support market, limit, stop, and stop-limit orders. Mutual funds only support market orders.</li>
+        <li><strong>Complex orders on a small screen.</strong> A stop-limit order asks for several decisions at once, and the mobile experience had to keep that from feeling like a dense form.</li>
+        <li><strong>Quotes go stale fast.</strong> Stock prices come from a live bid and ask, so customers need to know how current a price is before they commit to it.</li>
+        <li><strong>The rules kept changing.</strong> Order types and business requirements weren't locked in from day one.</li>
+        <li><strong>Customers already use Robinhood.</strong> Expectations for how fast and simple trading should feel were set long before anyone touched ours.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Research</div>
+      <h2>One structure that works for every fund and stock.</h2>
+      <p>Stock and ETF research pages share the same chart, the same buy panel, and the same layout, so if you know how to read one, you already know how to read the other. What changes is the content underneath. Stocks get analyst ratings, earnings, and dividend history, and the shared frame flexes around whatever each asset actually has. The buy panel lets people pick an order type up front, since for stocks and ETFs a market order is one option among several, not the only one.</p>
+
+      <div class="cs-phone-row cs-phone-row--two">
+        <img src="tsla-digest.png" alt="Tesla stock research page showing price chart, position, and Buy &amp; Sell button">
+        <img src="etf-digest.png" alt="Vanguard S&amp;P 500 ETF research page showing candlestick chart and Buy button">
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <div class="cs-eyebrow">Buy &amp; Sell Flow</div>
+          <h2>One flow, multiple levels of complexity.</h2>
+          <p>Buying and selling share the same order-entry logic, just flipped. Mutual funds only support market orders, so that flow is just: type a dollar amount, review it, confirm it. Stocks and ETFs support all four order types, so I broke that flow into steps instead of one long form. Picking a stop-limit order walks you through setting the stop price, then the limit price, then how long the order should stay open, with the live price visible the whole time.</p>
+          <p>That step-by-step approach was a deliberate call for mobile. Showing stop price, limit price, and expiration on a small screen in one form felt overwhelming and easy to get wrong. Breaking it into individual steps kept each decision focused and gave people room to actually think about what they were entering, instead of scanning a dense form and second-guessing themselves.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <video autoplay loop muted playsinline>
+            <source src="stop-limit-buy.mp4" type="video/mp4">
+            <source src="stop-limit-buy.mov" type="video/quicktime">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Mobile to Web</div>
+      <h2>Same logic, different density.</h2>
+      <p>Bringing trading to web didn't mean stretching the mobile screens to fit a bigger window. The order logic stays identical on both platforms, so a stop-limit order asks for the same things in the same order, but the layout adapts to the space. On desktop, that same order fits into a single modal instead of separate steps, since there's enough room to take in several fields at once without it feeling overwhelming.</p>
+      <p>Keeping the logic shared and letting only the layout change also made the 3.0 work easier to scale. Engineering could build one set of order rules, and the features that follow in the new UI have a working example of how a complex flow can translate between platforms.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-section-split">
+        <div class="cs-section-split-text">
+          <div class="cs-eyebrow">Review Order</div>
+          <h2>Showing exactly how current a quote is.</h2>
+          <p>Stock prices come from a real bid and ask that can go stale within seconds. I added a timestamp and a manual refresh button to the review screen, so people know exactly how current their quote is before they confirm, instead of wondering whether the number in front of them still means anything.</p>
+          <p>A disclosure sits right above the confirm button, written specifically about the risk of losing principal rather than as a generic legal block, so it reads as part of the decision instead of fine print to scroll past.</p>
+        </div>
+        <div class="cs-section-split-media">
+          <img src="equity-review.png" alt="TSLA review order screen showing NBBO quote, refresh link, and equity disclosure">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Designing Against Moving Requirements</div>
+      <h2>Building for change instead of waiting for it to stop.</h2>
+      <p>The business hadn't fully decided what it wanted, so requirements could shift before I even finished designing for the last version. I built the order-type and account logic as configurable rules instead of hardcoding anything, so when something changed, I could update one setting instead of redoing a screen.</p>
+      <p>That same flexibility is what let the trading experience grow. Search, research, and order entry were designed as a shared foundation, which is how Bitcoin trading, designed alongside this work, could plug into the same product instead of becoming a separate app. That work is its own story, covered in the <a href="crypto-trading.html">crypto trading case study</a>.</p>
+    </div>
+  </section>
+
+  <section class="cs-summary">
+    <div class="wrap">
+      <div class="cs-eyebrow">Where This Stands</div>
+      <p>Engineering is building against these flows now, with launch targeted in the next few months. For the first time, Axos customers will be able to trade stocks, ETFs, and mutual funds on web, with the same order logic they already know from mobile. On mobile, complex order types now walk people through one decision at a time. And as one of the first features in the 3.0 UI, it gave the rest of the platform a working model for how to carry a complex flow across both screens.</p>
+      <div class="cs-tags">
+        <span class="cs-tag">Mobile &amp; Web</span>
+        <span class="cs-tag">Regulated Fintech</span>
+        <span class="cs-tag">Equities Trading</span>
+        <span class="cs-tag">3.0 UI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-next">
+    <div class="wrap">
+      <a href="crypto-trading.html">
+        Next case study: Crypto Trading
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Marissa Folks · San Diego, CA
+</footer>
+
+</body>
+</html>

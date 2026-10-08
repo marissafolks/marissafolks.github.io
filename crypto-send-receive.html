@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crypto Send & Receive — Marissa Folks</title>
+<title>Crypto Wallet Management | Marissa Folks</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -33,8 +33,8 @@
       <div class="cs-hero-split">
         <div class="cs-hero-split-text">
           <div class="cs-kicker">UX Design · 0–1 · Regulated Fintech</div>
-          <h1>Designing Send &amp; Receive for self-directed crypto.</h1>
-          <p class="dek">Building the first crypto money-movement flows inside a regulated bank, where every screen had to answer to a custodian's API before it could answer to the user.</p>
+          <h1>Giving customers control of their Bitcoin.</h1>
+          <p class="dek">Building Axos's first send, receive, and saved wallet flows for Bitcoin, the first time customers could move crypto in and out of the bank on their own.</p>
         </div>
         <div class="cs-hero-split-image cs-hero-split-image--two">
           <img src="send-purpose.png" alt="Purpose for Sending screen showing transfer categories">
@@ -46,7 +46,7 @@
 
   <section style="border-top:none; padding-top:0;">
     <div class="wrap">
-      <dl class="cs-meta-bar">
+      <dl class="cs-meta-bar cs-meta-bar--three">
         <div>
           <dt>Role</dt>
           <dd>Lead UX Designer</dd>
@@ -61,7 +61,15 @@
         </div>
         <div>
           <dt>Scope</dt>
-          <dd>End-to-end Send and Receive flows for Bitcoin: external wallets, internal Axos transfers, and linked-account transfers</dd>
+          <dd>End-to-end Send and Receive flows for Bitcoin, plus saved wallets, across external wallets, other Axos customers, and linked accounts</dd>
+        </div>
+        <div>
+          <dt>Team</dt>
+          <dd>Product Manager<br>Technical Lead<br>Project Manager<br>Business Analysts<br>Developers</dd>
+        </div>
+        <div>
+          <dt>Stakeholders</dt>
+          <dd>SVP of Axos Invest<br>President of Consumer Bank<br>SVP of Retail Banking &amp; Invest</dd>
         </div>
       </dl>
     </div>
@@ -71,9 +79,8 @@
     <div class="wrap">
       <div class="cs-eyebrow">Overview</div>
       <h2>The first time a regulated bank let customers move crypto on their own.</h2>
-      <p>Axos Bank's self-directed crypto product launched trading and custody, but customers had no way to move Bitcoin in or out of their accounts. I designed the Send and Receive flows from scratch, the first time Axos let customers transact directly with external wallets. Development is underway now, targeting launch in the coming months.</p>
-      <p>The real challenge wasn't the UI. Our custodial vendor holds assets in omnibus custody, so unlike Coinbase or Kraken, it can't credit a deposit the instant it confirms on-chain. Every transaction needs extra instruction, compliance checks, or manual review.</p>
-      <p>My job was to absorb that complexity so customers didn't feel all of it at once, while keeping compliance, risk, and engineering confident in the result.</p>
+      <p>Once customers could buy Bitcoin at Axos, they needed a way to move it. I designed the Send and Receive flows from scratch, along with saved wallet management, the first time Axos let customers transact directly with external wallets.</p>
+      <p>Axos holds Bitcoin through a third-party custodian in omnibus custody, so unlike Coinbase or Kraken, it can't credit a deposit the instant it confirms on-chain, and every transfer carries extra instruction, compliance checks, or review. My job was to absorb that complexity so customers didn't feel all of it at once, while keeping compliance, risk, and engineering confident in the result.</p>
     </div>
   </section>
 
@@ -84,9 +91,9 @@
 
       <ul class="cs-list">
         <li><strong>No internal precedent.</strong> Every pattern, from saved wallets to limit displays, had to be designed from scratch.</li>
-        <li><strong>The vendor's API enforces its own compliance logic</strong> (Travel Rule data, sanctions screening, wallet whitelisting) that the UI has to surface, not hide.</li>
+        <li><strong>The custodian's API enforces its own compliance logic</strong> (Travel Rule data, sanctions screening, wallet whitelisting) that the UI has to surface, not hide.</li>
+        <li><strong>Three transfer contexts</strong> (external wallets, other Axos customers, linked accounts) carry different risk and needed different levels of friction.</li>
         <li><strong>Customers compare us to Coinbase and Kraken</strong>, which carry none of these constraints. The flows needed to feel modern, not bureaucratic.</li>
-        <li><strong>Three transfer contexts</strong> (external wallets, other Axos customers, linked accounts) carry different risk and needed different friction levels.</li>
       </ul>
     </div>
   </section>
@@ -94,8 +101,8 @@
   <section class="cs-section">
     <div class="wrap">
       <div class="cs-eyebrow">Send Flow</div>
-      <h2>Treating compliance as a design constraint, not a disclaimer.</h2>
-      <p>Sending BTC out of a custodial account touches anti-money-laundering rules, sanctions screening, and transaction-purpose reporting. I treated each of those as a design constraint, not a disclaimer to bury in fine print.</p>
+      <h2>Treating compliance as design material.</h2>
+      <p>Sending Bitcoin out of a custodial account touches anti-money-laundering rules, sanctions screening, and transaction-purpose reporting. I treated each of those as design material, not a disclaimer to bury in fine print.</p>
 
       <div class="cs-phone-row cs-phone-row--equal">
         <img src="custody-type-selection.png" alt="Select Custody Type screen showing Managed and Self-Managed options">
@@ -109,9 +116,9 @@
     <div class="wrap">
       <div class="cs-section-split">
         <div class="cs-section-split-text">
-          <h2>Recipient entry and address validation.</h2>
-          <p>The recipient screen also acts as a saved wallet manager, since most people send to the same addresses repeatedly. When a customer enters a wallet address, it gets validated against a real sanctions and compliance check on the backend, not just a format check on the device.</p>
-          <p>Saved wallets show a Pending badge when they haven't been approved yet. The vendor requires email authorization before a wallet address can be used, which is more involved than anything a typical crypto exchange asks for. Rather than hiding that wait, I made it a visible status customers can come back to.</p>
+          <h2>Saved wallets and address validation.</h2>
+          <p>The recipient screen doubles as a saved wallet manager, since most people send to the same addresses again and again. When a customer enters a wallet address, it gets validated against a real sanctions and compliance check on the backend, not just a format check on the device.</p>
+          <p>New wallets show a Pending badge until they're approved. The custodian requires email authorization before an address can be used, which is more involved than a typical exchange. Rather than hiding that wait, I made it a visible status customers can come back to.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
@@ -127,7 +134,7 @@
       <div class="cs-section-split">
         <div class="cs-section-split-text">
           <h2>Purpose for sending.</h2>
-          <p>No mainstream exchange asks customers to declare why they're sending Bitcoin. Axos's vendor needs a purpose code for regulatory reporting before it accepts the instruction. I designed this as its own step, with categories worded the way a customer would actually describe an action (Gift, Reimbursement, Rebalance) instead of compliance taxonomy, so it reads as routine rather than an interrogation.</p>
+          <p>No mainstream exchange asks customers to declare why they're sending Bitcoin, but regulatory reporting requires a purpose code before a transfer can go out. I designed this as its own step, with categories worded the way a customer would actually describe what they're doing (Gift, Reimbursement, Rebalance) instead of compliance taxonomy, so it reads as routine rather than an interrogation.</p>
         </div>
         <div class="cs-section-split-media">
           <img src="send-purpose.png" alt="Purpose for Sending screen showing transfer categories">
@@ -141,7 +148,7 @@
       <div class="cs-section-split">
         <div class="cs-section-split-text">
           <h2>Amount and limits.</h2>
-          <p>Limits are enforced per source account, not per customer, so the active account's remaining balance had to be unmistakable. I designed the Send Limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would exceed the limit, teaching the constraint early instead of surprising the customer at submission.</p>
+          <p>Send limits apply per source account, not per customer, so the active account's remaining room had to be unmistakable. I designed the limits module as a persistent progress bar rather than a static number, and reused it in a hard-stop screen for transfers that would go over, teaching the limit early instead of surprising the customer at submission.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
@@ -156,8 +163,8 @@
     <div class="wrap">
       <div class="cs-section-split">
         <div class="cs-section-split-text">
-          <h2>SMS verification.</h2>
-          <p>SMS verification only appears on one path: internal transfers to another Axos customer above a set amount. That's a deliberate risk call with fraud and compliance, since third-party transfers are the pattern most associated with social-engineering scams. Sending to your own linked accounts skips it entirely, and external wallet sends route through the address validation and purpose steps instead.</p>
+          <h2>Friction where the risk actually is.</h2>
+          <p>SMS verification only appears on one path: internal transfers to another Axos customer above a set amount. That was a deliberate risk call with fraud and compliance, since third-party transfers are the pattern most associated with social-engineering scams. Sending to your own linked accounts skips it entirely, and external wallet sends route through address validation and purpose instead.</p>
         </div>
         <div class="cs-section-split-media">
           <img src="sms-verif.png" alt="SMS verification screen showing six-digit code entry">
@@ -170,7 +177,7 @@
     <div class="wrap">
       <div class="cs-eyebrow">Receive Flow</div>
       <h2>Same constraint, opposite direction.</h2>
-      <p>Receiving has the same underlying constraint as sending, the vendor's omnibus custody model, but it shows up in reverse: instead of validating who you're sending to, the system needs the customer to actively claim funds that already arrived.</p>
+      <p>Receiving has the same underlying custody model as sending, but it shows up in reverse: instead of validating who you're sending to, the customer needs to actively claim funds that already arrived.</p>
     </div>
   </section>
 
@@ -179,11 +186,12 @@
       <div class="cs-section-split">
         <div class="cs-section-split-text">
           <h2>Sharing the deposit address.</h2>
-          <p>Most platforms cache a permanent deposit address, so the QR code is always there. Our vendor generates it on demand through an API call, which means a real failure mode if that endpoint is slow. I designed an explicit QR Code Not Available state with a path to retry, rather than letting the screen fail silently.</p>
-          <p>The network-exclusivity notice under the address (Bitcoin network only) does real work too. The vendor doesn't auto-detect a deposit sent on the wrong network, so that warning has to do the job a routing layer would otherwise handle. This is the one mistake on this screen that can't be undone, so it sits directly under the address rather than in a tooltip.</p>
+          <p>Most platforms cache a permanent deposit address, so the QR code is always there. Here, the address is generated on demand, which means a real chance it isn't ready when someone opens the screen. I designed an explicit QR Code Not Available state rather than letting the screen fail silently, so customers know to check back instead of assuming something is broken.</p>
+          <p>The Bitcoin-network-only notice under the address does real work too. A deposit sent on the wrong network can't be recovered, so this is the one mistake on the screen that can't be undone. It sits directly under the address rather than in a tooltip.</p>
         </div>
-        <div class="cs-section-split-media">
+        <div class="cs-section-split-media cs-section-split-media--two">
           <img src="receive-qr.jpg" alt="Receive BTC screen showing QR code and wallet address">
+          <img src="receive-qr-error.png" alt="Receive BTC screen showing QR Code Not Available state">
         </div>
       </div>
     </div>
@@ -193,10 +201,10 @@
     <div class="wrap">
       <div class="cs-section-split">
         <div class="cs-section-split-text">
-          <h2>Manual approval for external deposits.</h2>
-          <p>Unlike Coinbase or Kraken, Axos can't auto-credit an inbound Bitcoin deposit. Our vendor's omnibus custody model requires explicit customer direction first, so I had to design an active approval step into a moment that's normally passive in crypto.</p>
+          <h2>Approving an external deposit.</h2>
+          <p>Unlike Coinbase or Kraken, Axos can't auto-credit an inbound Bitcoin deposit. The omnibus custody model needs explicit direction from the customer first, so I had to design an active approval step into a moment that's normally passive in crypto.</p>
           <p>The deposit-received screen opens with a celebratory visual before asking the customer to act, so the first thing they feel is that money arrived. The Verify Deposit Information step (sender country, custody type) is a Travel Rule requirement most platforms handle passively. I kept the fields minimal and pre-filled the obvious case so it reads as a quick confirmation, not a compliance form.</p>
-          <p>After approval, funds still don't land instantly. The vendor has a backend review queue, so I wrote the post-approval state honestly rather than implying it's final. Internal Axos-to-Axos transfers skip all of this entirely and resolve in one auto-approved screen, which I kept visible in the design as a deliberate contrast.</p>
+          <p>After approval, funds still go through a review before they land, so I wrote the post-approval state honestly rather than implying it's final. Internal Axos-to-Axos transfers skip all of this and resolve in one auto-approved screen, a deliberate contrast that shows customers the fast path exists.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
@@ -212,7 +220,7 @@
       <div class="cs-section-split">
         <div class="cs-section-split-text">
           <h2>Cost basis as a deliberate, separate ask.</h2>
-          <p>The cost-basis prompt after both deposit flows isn't vendor-mandated. It's a platform decision: most competitors ignore cost basis entirely or defer it to tax season, which becomes a support burden later. I surface it immediately, but as a deferred, non-blocking note rather than a required field, so it doesn't compete with the more time-sensitive compliance steps above it.</p>
+          <p>The cost-basis prompt after both deposit flows isn't required by the custodian. It's a product decision: most competitors ignore cost basis entirely or leave it for tax season, which turns into a support burden later. I surface it right away, but as a non-blocking note customers can come back to, so it doesn't compete with the more time-sensitive steps above it.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
@@ -223,11 +231,20 @@
     </div>
   </section>
 
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="cs-eyebrow">Aligning on Constraints</div>
+      <h2>Separating what's required from what's a default.</h2>
+      <p>Because this was net-new for the bank, a meaningful part of the work was getting compliance, risk, and the custodian's integration team aligned on which constraints were truly non-negotiable (sanctions screening, Travel Rule data, wallet whitelisting) and which were defaults I could soften in the UI.</p>
+      <p>The custodian's guidance on transfer rules sometimes shifted or contradicted earlier answers, so I pushed for clear answers instead of designing around the first one we got. That clarity is what let me keep friction where the risk actually was, and take it out everywhere else.</p>
+    </div>
+  </section>
+
   <section class="cs-summary">
     <div class="wrap">
       <div class="cs-eyebrow">Where This Stands</div>
-      <p>Engineering is currently building against these flows, with launch targeted in the next few months. Because this was net-new for the bank, a meaningful part of the work was procedural: getting compliance, risk, and the vendor's integration team aligned on which constraints were truly non-negotiable (sanctions screening, Travel Rule data, wallet whitelisting) versus which were defaults I could soften in the UI.</p>
-      <p>The throughline is the same across both flows: where the backend genuinely can't move at exchange speed, the design says so plainly and gives the customer a clear next step. Where the constraint was a default rather than a requirement, I designed around it instead of passing it through.</p>
+      <p>Engineering is building against these flows now, with launch targeted in the next few months. When it ships, Axos customers will be able to send Bitcoin to external wallets, other Axos customers, and their own linked accounts, and receive it back in, for the first time.</p>
+      <p>The throughline across both flows is the same: where the custody model genuinely can't move at exchange speed, the design says so plainly and gives the customer a clear next step. Where a constraint was a default rather than a requirement, I designed around it instead of passing it through. Buying and selling Bitcoin is covered in the <a href="crypto-trading.html">crypto trading case study</a>.</p>
       <div class="cs-tags">
         <span class="cs-tag">0–1 Design</span>
         <span class="cs-tag">Regulated Fintech</span>
@@ -239,8 +256,8 @@
 
   <section class="cs-next">
     <div class="wrap">
-      <a href="research-to-buy.html">
-        Next case study: Research-to-Buy
+      <a href="adthrill-business-dashboard.html">
+        Next case study: AdThrill Business Dashboard
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
@@ -249,7 +266,7 @@
 </main>
 
 <footer>
-  © 2026 Marissa Folks — San Diego, CA
+  © 2026 Marissa Folks · San Diego, CA
 </footer>
 
 </body>
