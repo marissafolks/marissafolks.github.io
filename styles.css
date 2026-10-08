@@ -165,7 +165,18 @@ section{padding:88px 0;border-top:1px solid var(--line);}
 .fact{padding:16px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;}
 .fact dt{font-size:12.5px;color:var(--muted);font-family:var(--mono);letter-spacing:0.02em;flex-shrink:0;}
 .fact dd{font-size:14.5px;text-align:right;color:var(--ink);}
+.fact-grid{display:inline-grid;grid-template-columns:auto auto;column-gap:24px;row-gap:6px;text-align:left;}
+.about-photo{
+  display:block;
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid var(--line);
+  margin-bottom:28px;
+}
 @media (max-width:760px){.about-grid{grid-template-columns:1fr;gap:40px;}}
+@media (max-width:760px){.about-photo{max-width:360px;}}
 
 /* ---------- work cards ---------- */
 .work-grid{
