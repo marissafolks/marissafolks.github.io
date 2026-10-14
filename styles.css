@@ -220,7 +220,8 @@ section{padding:88px 0;border-top:1px solid var(--line);}
   display:block;
 }
 .work-card-inset img[src*="tsla-ratings"],
-.work-card-inset img[src*="btc-thumb"]{
+.work-card-inset img[src*="btc-thumb"],
+.work-card-inset img[src*="trading-thumb"]{
   object-fit:cover;
 }
 .work-card-title-row{
