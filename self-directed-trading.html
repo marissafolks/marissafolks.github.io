@@ -37,7 +37,7 @@
           <p class="dek">Enhancing Axos's existing stock, ETF, and mutual fund trading experience while launching it on web, as one of the first features built fully in the new 3.0 UI.</p>
         </div>
         <div class="cs-hero-split-image">
-          <img src="tsla-digest.png" alt="Tesla stock research page on mobile showing price chart, position, and Buy &amp; Sell button">
+          <img class="cs-raw" src="woof-digest.png" alt="Petco (WOOF) stock research page on mobile showing price chart and company overview">
         </div>
       </div>
     </div>
@@ -101,9 +101,7 @@
 
       <ul class="cs-list">
         <li><strong>This had never existed on web before.</strong> Trading was mobile-only, so this project had to prove out patterns for a platform that had nothing to build from.</li>
-        <li><strong>Order types depend on the asset, not on design.</strong> Stocks and ETFs support market, limit, stop, and stop-limit orders. Mutual funds only support market orders.</li>
         <li><strong>Complex orders on a small screen.</strong> A stop-limit order asks for several decisions at once, and the mobile experience had to keep that from feeling like a dense form.</li>
-        <li><strong>Quotes go stale fast.</strong> Stock prices come from a live bid and ask, so customers need to know how current a price is before they commit to it.</li>
         <li><strong>The rules kept changing.</strong> Order types and business requirements weren't locked in from day one.</li>
         <li><strong>Customers already use Robinhood.</strong> Expectations for how fast and simple trading should feel were set long before anyone touched ours.</li>
       </ul>
@@ -114,11 +112,11 @@
     <div class="wrap">
       <div class="cs-eyebrow">Research</div>
       <h2>One structure that works for every fund and stock.</h2>
-      <p>Stock and ETF research pages share the same chart, the same buy panel, and the same layout, so if you know how to read one, you already know how to read the other. What changes is the content underneath. Stocks get analyst ratings, earnings, and dividend history, and the shared frame flexes around whatever each asset actually has. The buy panel lets people pick an order type up front, since for stocks and ETFs a market order is one option among several, not the only one.</p>
+      <p>Stock and ETF research pages share the same chart, the same buy panel, and the same layout, so if you know how to read one, you already know how to read the other. What changes is the content underneath. Stocks get analyst ratings, earnings, and dividend history, and the shared frame flexes around whatever each asset actually has.</p>
 
-      <div class="cs-phone-row cs-phone-row--two">
-        <img src="tsla-digest.png" alt="Tesla stock research page showing price chart, position, and Buy &amp; Sell button">
-        <img src="etf-digest.png" alt="Vanguard S&amp;P 500 ETF research page showing candlestick chart and Buy button">
+      <div class="cs-phone-row cs-phone-row--two cs-raw">
+        <img src="woof-digest.png" alt="Petco (WOOF) stock research page showing price chart and company overview">
+        <img src="voo-digest.png" alt="Vanguard S&amp;P 500 ETF (VOO) research page showing candlestick chart with volume and fund overview">
       </div>
     </div>
   </section>
@@ -130,7 +128,6 @@
           <div class="cs-eyebrow">Buy &amp; Sell Flow</div>
           <h2>One flow, multiple levels of complexity.</h2>
           <p>Buying and selling share the same order-entry logic, just flipped. Mutual funds only support market orders, so that flow is just: type a dollar amount, review it, confirm it. Stocks and ETFs support all four order types, so I broke that flow into steps instead of one long form. Picking a stop-limit order walks you through setting the stop price, then the limit price, then how long the order should stay open, with the live price visible the whole time.</p>
-          <p>That step-by-step approach was a deliberate call for mobile. Showing stop price, limit price, and expiration on a small screen in one form felt overwhelming and easy to get wrong. Breaking it into individual steps kept each decision focused and gave people room to actually think about what they were entering, instead of scanning a dense form and second-guessing themselves.</p>
         </div>
         <div class="cs-section-split-media">
           <video autoplay loop muted playsinline>
@@ -145,32 +142,28 @@
   <section class="cs-section">
     <div class="wrap">
       <div class="cs-eyebrow">Mobile to Web</div>
-      <h2>Same logic, different density.</h2>
-      <p>Bringing trading to web didn't mean stretching the mobile screens to fit a bigger window. The order logic stays identical on both platforms, so a stop-limit order asks for the same things in the same order, but the layout adapts to the space. On desktop, that same order fits into a single modal instead of separate steps, since there's enough room to take in several fields at once without it feeling overwhelming.</p>
-      <p>Keeping the logic shared and letting only the layout change also made the 3.0 work easier to scale. Engineering could build one set of order rules, and the features that follow in the new UI have a working example of how a complex flow can translate between platforms.</p>
-    </div>
-  </section>
+      <h2>Progressive disclosure = reduced cognitive load</h2>
+      <p>Complex forms don't have to feel complex. The order logic stays identical on both platforms, so a limit order asks for the same things in the same order, but the layout adapts to the space. Instead of asking for everything up front, each field appears only when it's needed, so customers deal with one piece of the order at a time and the rest stays out of the way until it matters.</p>
+      <p>On mobile, that meant a deliberate step-by-step approach. Showing the limit price, number of shares, and expiration on a small screen in one form felt overwhelming and easy to get wrong. Breaking it into individual steps kept each decision focused and gave people room to actually think about what they were entering, instead of scanning a dense form and second-guessing themselves. On desktop, there's enough room to take in several fields at once without it feeling overwhelming, so the same order fits into a single panel instead of separate steps.</p>
 
-  <section class="cs-section">
-    <div class="wrap">
-      <div class="cs-section-split">
-        <div class="cs-section-split-text">
-          <div class="cs-eyebrow">Review Order</div>
-          <h2>Showing exactly how current a quote is.</h2>
-          <p>Stock prices come from a real bid and ask that can go stale within seconds. I added a timestamp and a manual refresh button to the review screen, so people know exactly how current their quote is before they confirm, instead of wondering whether the number in front of them still means anything.</p>
-          <p>A disclosure sits right above the confirm button, written specifically about the risk of losing principal rather than as a generic legal block, so it reads as part of the decision instead of fine print to scroll past.</p>
-        </div>
-        <div class="cs-section-split-media">
-          <img src="equity-review.png" alt="TSLA review order screen showing NBBO quote, refresh link, and equity disclosure">
-        </div>
+      <div class="cs-image-block cs-screen">
+        <img src="web-limit-order.jpg" alt="Web trading modal with the WOOF research chart and a buy panel showing limit price, number of shares, and expiration in one view">
+        <div class="cs-image-caption">Web: limit price, shares, and expiration together in one panel</div>
       </div>
+
+      <div class="cs-phone-row cs-screen">
+        <img src="mobile-limit-price.png" alt="Mobile Set Limit Price screen with keypad">
+        <img src="mobile-expiration.png" alt="Mobile Set Order Expiration screen with Good til market close and Good til canceled options">
+        <img src="mobile-buy-shares.png" alt="Mobile Buy WOOF screen showing 100 shares, limit price, and estimated total">
+      </div>
+      <div class="cs-image-caption cs-caption-center">Mobile: the same order, one decision per screen</div>
     </div>
   </section>
 
   <section class="cs-section">
     <div class="wrap">
       <div class="cs-eyebrow">Designing Against Moving Requirements</div>
-      <h2>Building for change instead of waiting for it to stop.</h2>
+      <h2>Designing for requirements that kept changing.</h2>
       <p>The business hadn't fully decided what it wanted, so requirements could shift before I even finished designing for the last version. I built the order-type and account logic as configurable rules instead of hardcoding anything, so when something changed, I could update one setting instead of redoing a screen.</p>
       <p>That same flexibility is what let the trading experience grow. Search, research, and order entry were designed as a shared foundation, which is how Bitcoin trading, designed alongside this work, could plug into the same product instead of becoming a separate app. That work is its own story, covered in the <a href="crypto-trading.html">crypto trading case study</a>.</p>
     </div>

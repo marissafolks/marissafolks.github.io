@@ -703,6 +703,14 @@ footer{
   outline:none;
 }
 .cs-section-split-media .cs-video-raw{border:1px solid var(--line);border-radius:22px;}
+.cs-image-block.cs-screen img{border-radius:12px;}
+.cs-phone-row.cs-screen{max-width:760px;margin-left:auto;margin-right:auto;margin-bottom:0;align-items:start;}
+.cs-phone-row.cs-screen img{border:1px solid var(--line);border-radius:22px;}
+.cs-caption-center{text-align:center;}
+.cs-hero-split-image img.cs-raw,
+.cs-phone-row.cs-raw img{border:1px solid var(--line);border-radius:22px;}
+.cs-phone-row--two.cs-raw{max-width:520px;}
+@media (max-width:680px){.cs-phone-row.cs-screen{padding:0;}.cs-phone-row.cs-screen img{max-width:260px;margin:0 auto;}}
 @media (max-width:760px){
   .cs-section-split{grid-template-columns:1fr;}
   .cs-section-split-media{width:180px;margin:0 auto;}
